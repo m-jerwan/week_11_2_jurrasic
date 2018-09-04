@@ -90,4 +90,13 @@ describe('Park', function() {
     assert.strictEqual(actual, 800*365*20);
   })
 
+
+  it('should be able to return diet stock count', function(){
+    park_1.addDinosaur(dino_1);
+    park_1.addDinosaur(dino_2);
+    const actual = park_1.dinoDietTypeStockCount();
+    const expected = { Herbivore: 1, Carnovore: 1}
+    assert.deepStrictEqual(actual, expected);
+  })
+
 });

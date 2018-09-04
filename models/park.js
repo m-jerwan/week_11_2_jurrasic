@@ -79,6 +79,24 @@ Park.prototype.annualRevenue = function(){
     return annualRevenue;
 }
 
+Park.prototype.dinoDietTypeStockCount = function(){
+
+    let arrayOfDietTypes = [];
+    for (let dinosaur of this.getDinosaurCollection()){
+        arrayOfDietTypes.push(dinosaur.getDiet());
+    }
+
+    let counts = {};
+    arrayOfDietTypes.forEach(function(x) { 
+        counts[x] = (counts[x] || 0) + 1; 
+    });
+    return counts;
+}
+
+
+
+
+
 
 
 
