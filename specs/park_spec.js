@@ -9,7 +9,7 @@ describe('Park', function() {
 
   beforeEach(function () {
     park_1 = new Park("Jurrasic", 20);
-    dino_1 = new Dinosaur("brontosaurus", "Herbivore", 300);
+    dino_1 = new Dinosaur("Brontosaurus", "Herbivore", 300);
     dino_2 = new Dinosaur("T-rex", "Carnovore", 500);
   })
 
@@ -51,8 +51,20 @@ describe('Park', function() {
 
   });
 
-  it('should be able to find all dinosaurs of a particular species');
+  it('should be able to find all dinosaurs of a particular species', function(){
+    park_1.addDinosaur(dino_1);
+    park_1.addDinosaur(dino_2);
+    const actual = park_1.findAllDinosaursOfSpecies("Brontosaurus");
+    assert.deepStrictEqual(actual, [dino_1]);
 
-  it('should be able to remove all dinosaurs of a particular species');
+  });
+
+  it('should be able to remove all dinosaurs of a particular species', function(){
+    park_1.addDinosaur(dino_1);
+    park_1.addDinosaur(dino_2);
+    park_1.removeAllDinosaursOfSpecies("Brontosaurus");
+    const actual = park_1.getDinosaurCollection();
+    assert.deepStrictEqual(actual, [dino_2])
+  });
 
 });

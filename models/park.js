@@ -38,6 +38,25 @@ Park.prototype.giveMeMostPopularDino = function(){
 }
 
 
+Park.prototype.findAllDinosaursOfSpecies = function(species){
+    allDinosaursOfSpecies = [];
+    for (let dino of this.getDinosaurCollection()){
+        if(dino.getSpecies() === species){
+            allDinosaursOfSpecies.push(dino);
+        }
+    }
+    return allDinosaursOfSpecies;
+}
+
+Park.prototype.removeAllDinosaursOfSpecies = function (species) {
+    let allDinosaursNotOfSpecies = [];
+    for (let dino of this.getDinosaurCollection()) {
+        if (dino.getSpecies() !== species) {
+            allDinosaursNotOfSpecies.push(dino);
+        }
+    }
+    this.dinosaurCollection = allDinosaursNotOfSpecies;
+}
 
 
 
