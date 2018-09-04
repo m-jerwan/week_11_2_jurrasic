@@ -67,4 +67,27 @@ describe('Park', function() {
     assert.deepStrictEqual(actual, [dino_2])
   });
 
+  it('should be able to calculate tickets per day', function(){
+    park_1.addDinosaur(dino_1);
+    park_1.addDinosaur(dino_2);
+    const actual = park_1.ticketsAmmountPerDay();
+    assert.strictEqual(actual, 800);
+
+  })
+
+  it('should be able to calculate tickets per year', function(){
+    park_1.addDinosaur(dino_1);
+    park_1.addDinosaur(dino_2);
+    const actual = park_1.ticketsAmmountPerYear();
+    assert.strictEqual(actual, 800*365);
+  })
+
+
+  it('should be able to calculate annual revenue', function(){
+    park_1.addDinosaur(dino_1);
+    park_1.addDinosaur(dino_2);
+    const actual = park_1.annualRevenue();
+    assert.strictEqual(actual, 800*365*20);
+  })
+
 });

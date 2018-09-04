@@ -48,7 +48,7 @@ Park.prototype.findAllDinosaursOfSpecies = function(species){
     return allDinosaursOfSpecies;
 }
 
-Park.prototype.removeAllDinosaursOfSpecies = function (species) {
+Park.prototype.removeAllDinosaursOfSpecies = function(species) {
     let allDinosaursNotOfSpecies = [];
     for (let dino of this.getDinosaurCollection()) {
         if (dino.getSpecies() !== species) {
@@ -59,6 +59,25 @@ Park.prototype.removeAllDinosaursOfSpecies = function (species) {
 }
 
 
+
+Park.prototype.ticketsAmmountPerDay = function(){
+    let ticketAmmountPerDay = 0;
+    for (let dino of this.getDinosaurCollection()) {
+        ticketAmmountPerDay += dino.getNumberOfGuestsVisiting();
+    }
+    return ticketAmmountPerDay;
+}
+
+Park.prototype.ticketsAmmountPerYear = function(){
+    let ticketAmmountPerYear = this.ticketsAmmountPerDay() * 365;
+    return ticketAmmountPerYear;
+}
+
+
+Park.prototype.annualRevenue = function(){
+    let annualRevenue = this.ticketsAmmountPerYear() * this.ticketPrice;
+    return annualRevenue;
+}
 
 
 
