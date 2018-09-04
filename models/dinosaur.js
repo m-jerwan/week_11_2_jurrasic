@@ -10,3 +10,7 @@ module.exports = Dinosaur;
 Dinosaur.prototype.getDiet = function(){
   return this.diet;
 }
+
+Dinosaur.prototype.getNumberOfGuestsVisiting = function(){
+  return this.guestsAttractedPerDay;
+}

@@ -26,6 +26,17 @@ Park.prototype.removeDinosaur = function(dinosaur){
     this.dinosaurCollection.splice(index, 1);
 }
 
+Park.prototype.giveMeMostPopularDino = function(){
+    let mostPopular = this.getDinosaurCollection()[0];
+    for (let dinosaur of this.getDinosaurCollection()){
+        if (mostPopular.getNumberOfGuestsVisiting() < dinosaur.getNumberOfGuestsVisiting()){
+            mostPopular = dinosaur;
+
+        }
+    }
+    return mostPopular;
+}
+
 
 
 
