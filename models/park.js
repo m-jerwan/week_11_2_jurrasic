@@ -17,6 +17,10 @@ Park.prototype.getDinosaurCollection = function(){
     return this.dinosaurCollection;
 }
 
+Park.prototype.addDinosaur = function(dinosaur){
+    this.dinosaurCollection.push(dinosaur);
+}
+
 
 
 

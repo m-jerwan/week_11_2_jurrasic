@@ -6,3 +6,7 @@ const Dinosaur = function (species, diet, guestsAttractedPerDay) {
 }
 
 module.exports = Dinosaur;
+
+Dinosaur.prototype.getDiet = function(){
+  return this.diet;
+}
