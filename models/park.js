@@ -21,6 +21,10 @@ Park.prototype.addDinosaur = function(dinosaur){
     this.dinosaurCollection.push(dinosaur);
 }
 
+Park.prototype.removeDinosaur = function(dinosaur){
+    let index = this.dinosaurCollection.indexOf(dinosaur);
+    this.dinosaurCollection.splice(index, 1);
+}
 
 
 
